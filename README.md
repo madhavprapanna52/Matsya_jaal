@@ -1,50 +1,106 @@
-# Project : Matsya_Jaal
-Machine learning sollution for solving problem of scam/phishing email classification
+🕸️ Matsya_Jaal — A Machine Learning-based Phishing Email Detection System
+“Where Dharma is protected, Victory is assured.”
+A project that stands as the Matsya Avatār against the rising ocean of scam and phishing attacks. Developed with the intent to protect digital users by identifying and filtering malicious content using machine learning.
 
-Structure 
-|/Scam_detectiion_system
-|--> /Dataset 
-    |--> cleanned_dataset.csv
-    |--> Phishing_Email.csv
-|--> /Project_files
-  |--> /_Pycache_
-    |--> Data_preprocessing_unit.py
-    |--> Development_documentation.txt
-    |--> Feature_extraction_unit.py
-    |--> Model_train.py
-    |--> My_basic_tool.py
-    |--> Pramukh_cli.py
-    |--> logistic_model.pkl
-    |--> logistic_vectorizer.pkl
-  |--> Data_set.csv
-
-Files basic discriptions 
+📂 Project Structure
+markdown
+Copy
+Edit
+/Scam_detection_system
+│
+├── /Dataset
+│   ├── cleaned_dataset.csv
+│   └── Phishing_Email.csv
+│
+├── /Project_files
+│   ├── __pycache__/
+│   ├── Data_preprocessing_unit.py
+│   ├── Feature_extraction_unit.py
+│   ├── Model_train.py
+│   ├── My_basic_tool.py
+│   ├── Pramukh_cli.py
+│   ├── logistic_model.pkl
+│   ├── logistic_vectorizer.pkl
+│   └── Development_documentation.txt
+│
+└── Data_set.csv
+🧠 Functional Overview
 1. Data_preprocessing_unit.py
-    > Cleans the dataset, Makes tokens and stemming of words
-    > Reduce computational load for model and removes irreleventsthus
-    > Preventing errors in trainning and overall mathematical insights drawn from the model
+Cleans the dataset: tokenizes text, stems words, and removes irrelevant data. This process reduces noise and improves the quality of inputs, resulting in better computational efficiency and meaningful mathematical interpretations for model training.
+
 2. Model_train.py
-    > Here logistic regression model is trainned with simple bag of words vectorisation method
-    insights
-       - Using sklearn library auto optimisation techniques , vectorisation of words takes place gets into fit function for trainning weights and bias, thus ge get straight the model through these simple steps , with its report tested on 20 percent of dataset we get 95 percent accuracy
+Trains a Logistic Regression model using a Bag-of-Words vectorization technique.
+
+Utilizes Scikit-learn for auto-optimization.
+
+Achieves 95% accuracy on test data (20% split).
+
+Saves both model and vectorizer using pickle.
 
 3. Pramukh_cli.py
-       - The command line interface of our program where it consists of an interface for user to know about email it want to check , simple and easy to use , here , user input gets into vectorisaiton process of converting words to numbers  (trained in dataaset) , Based on model the numbers fit scores are decleared leading to predictions as output ,
+Your divine console — the Command Line Interface for real-time predictions.
 
-# Usage tips of project 
-    1. Setup an python vertual environment with python version (3.9.10)
-    2. install dependencies 
-    2. Load these files and you have these options 
-        > I have trainned them and they contain model thus you can either run CLI to see how its working 
-        > Load more dataset and them run files as these : My_basic_tool clean_dataset function -> Data_preprocessing_unit -> model_train --> CLI
-        
+Takes user input (email text)
 
-# potential Upgrades and issues 
-    + We wish to integrate it with more vast dataset , and integrate tensorflow and stack models for improved precissions and performence
-    + An preprocessing NLP text engine for advanced analysis of text to get sentiments based trainning and more deeper understanding 
-    + Introducing Reinforcement learning where users would help us to improve our product after we deploy it in our own application, and customise it based on their prefrences 
+Passes it through the vectorizer and model
 
-# Improvements required 
-    > Making it more robust on performence bases through using tensorflow based cuda core based trainning mechanism
-    > Making good preprocessing and feature extraction mechnism and implementing nural network for idle states.
+Predicts whether the content is phishing or not
 
+⚙️ Setup & Usage
+🔧 Environment Setup
+bash
+Copy
+Edit
+python3 -m venv matsyajaal_env
+source matsyajaal_env/bin/activate  # On Windows use `.\matsyajaal_env\Scripts\activate`
+python --version  # Ensure it's Python 3.9.10
+📦 Install Dependencies
+bash
+Copy
+Edit
+pip install -r requirements.txt
+🚀 Run the Project
+Option 1: Use Pre-trained Model
+bash
+Copy
+Edit
+python Project_files/Pramukh_cli.py
+Option 2: Train on New Data
+bash
+Copy
+Edit
+# Step-by-step
+from Project_files.My_basic_tool import clean_dataset
+from Project_files import Data_preprocessing_unit
+from Project_files import Model_train
+
+# Now run CLI
+python Project_files/Pramukh_cli.py
+🔮 Potential Upgrades & Vision
+✅ Integrate larger and multilingual datasets
+✅ Add a deep NLP engine for emotion/sentiment-based detection
+✅ Introduce Reinforcement Learning to allow feedback-driven personalization
+✅ Move to TensorFlow/Keras for stacked model performance
+✅ CUDA-powered neural training for speed and efficiency
+
+⚠️ Challenges & Immediate Improvements
+Improve feature extraction with advanced NLP libraries like spaCy, BERT, or FastText
+
+Implement neural networks to detect complex and context-aware phishing attempts
+
+Build GUI and API integrations for wide usability
+
+Test on multilingual datasets to increase coverage
+
+✨ Contribution & Future Plan
+This project is a starting point. Soon, we aim to:
+
+Integrate this system into a secure application
+
+Offer public access to real-time phishing detection
+
+Enable user feedback loops for improvement
+
+Collaborate with cyber security and digital safety campaigns
+
+“May Matsya Jaal be the first ripple that becomes a wave of safe digital evolution.”
